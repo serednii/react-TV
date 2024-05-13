@@ -1,0 +1,89 @@
+.deleted {
+  // display: none;
+}
+
+.fon {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-color: antiquewhite;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  opacity: 0.3;
+}
+
+.parent {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  background-color: yellowgreen;
+  padding: 20px;
+  z-index: 15;
+  border-radius: 15px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  -o-border-radius: 15px;
+  text-align: center;
+
+  .title {
+    margin-bottom: 20px;
+  }
+
+  .parentCart {
+    border: 1px solid #d3d3f3;
+    border-radius: 40px;
+    padding: 30px 20px 20px 20px;
+    width: 210px;
+    -webkit-border-radius: 40px;
+    -moz-border-radius: 40px;
+    -ms-border-radius: 40px;
+    -o-border-radius: 40px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    margin-bottom: 20px;
+
+    .images {
+      margin-bottom: 15px;
+    }
+
+    .cardDescription {
+      margin-bottom: 15px;
+    }
+  }
+
+  .buttons {
+    display: flex;
+    justify-content: space-around;
+
+    button {
+      min-width: 150px;
+      font-size: 1.5rem;
+      line-height: 2rem;
+      border-radius: 20px;
+      -webkit-border-radius: 20px;
+      -moz-border-radius: 20px;
+      -ms-border-radius: 20px;
+      -o-border-radius: 20px;
+      cursor: pointer;
+      transition: background-color 0.2s ease-in-out;
+      -webkit-transition: background-color 0.2s ease-in-out;
+      -moz-transition: background-color 0.2s ease-in-out;
+      -ms-transition: background-color 0.2s ease-in-out;
+      -o-transition: background-color 0.2s ease-in-out;
+    }
+
+    button:hover {
+      background-color: burlywood;
+    }
+  }
+
+
+
+}

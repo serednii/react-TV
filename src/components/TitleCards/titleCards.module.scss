@@ -1,0 +1,37 @@
+.titleCards {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+
+  .title {}
+
+  .searchBlock {
+    width: 250px;
+    border: 1px solid #f3f3F3;
+    border-radius: 10px;
+    box-sizing: border-box;
+    padding: 14px 18px;
+    position: relative;
+
+    input {
+      width: 170px;
+      height: 2rem;
+      padding-left: 10px;
+    }
+
+    .imgSearch {
+      margin-right: 15px;
+    }
+
+    .imgClear {
+      position: absolute;
+      right: 35px;
+      width: 20px;
+      height: 20px;
+      top: 20px;
+      cursor: pointer;
+    }
+  }
+}

@@ -3,12 +3,12 @@ import axios from 'axios';
 
 import Info from '../Info';
 import { useCart } from '../../hooks/useCart';
-
+import {baseUrl} from '../../App';
 import styles from './Drawer.module.scss';
 
 const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
-function Drawer({ onClose, onRemove, items = [], opened }) {
+function Drawer({ orders, setOrders, onClose, onRemove, items = [], opened }) {
   const { cartItems, setCartItems, totalPrice } = useCart();
   const [orderId, setOrderId] = React.useState(null);
   const [isOrderComplete, setIsOrderComplete] = React.useState(false);
@@ -17,18 +17,23 @@ function Drawer({ onClose, onRemove, items = [], opened }) {
   const onClickOrder = async () => {
     try {
       setIsLoading(true);
-      const { data } = await axios.post('/orders', {
+      const { data } = await axios.post(`${baseUrl}orders`, {
         items: cartItems,
       });
+      console.log(data)
+      // setOrders(orders.reduce((prev, obj) => [...prev, ...obj.items], []));
+      setOrders(prev => [...prev, ...data.items])
       setOrderId(data.id);
       setIsOrderComplete(true);
       setCartItems([]);
 
       for (let i = 0; i < cartItems.length; i++) {
         const item = cartItems[i];
-        await axios.delete('/cart/' + item.id);
+        console.log(item)
+        await axios.delete(`${baseUrl}cart/` + item.id);
         await delay(1000);
       }
+
     } catch (error) {
       alert('Ошибка при создании заказа :(');
     }
@@ -37,9 +42,11 @@ function Drawer({ onClose, onRemove, items = [], opened }) {
 
   return (
     <div className={`${styles.overlay} ${opened ? styles.overlayVisible : ''}`}>
+      <div className={styles.drawer__empty} onClick={onClose} ></div>
       <div className={styles.drawer}>
+
         <h2 className="d-flex justify-between mb-30">
-          Корзина <img onClick={onClose} className="cu-p" src="img/btn-remove.svg" alt="Close" />
+          Корзина <img onClick={onClose} className="cu-p" src="images/btn-remove.svg" alt="Close" />
         </h2>
 
         {items.length > 0 ? (
@@ -48,7 +55,7 @@ function Drawer({ onClose, onRemove, items = [], opened }) {
               {items.map((obj) => (
                 <div key={obj.id} className="cartItem d-flex align-center mb-20">
                   <div
-                    style={{ backgroundImage: `url(${obj.imageUrl})` }}
+                    style={{ backgroundImage: `url(${obj.urlImage})` }}
                     className="cartItemImg"></div>
 
                   <div className="mr-20 flex">
@@ -58,7 +65,7 @@ function Drawer({ onClose, onRemove, items = [], opened }) {
                   <img
                     onClick={() => onRemove(obj.id)}
                     className="removeBtn"
-                    src="img/btn-remove.svg"
+                    src="images/btn-remove.svg"
                     alt="Remove"
                   />
                 </div>
@@ -78,7 +85,7 @@ function Drawer({ onClose, onRemove, items = [], opened }) {
                 </li>
               </ul>
               <button disabled={isLoading} onClick={onClickOrder} className="greenButton">
-                Оформить заказ <img src="img/arrow.svg" alt="Arrow" />
+                Оформить заказ <img src="images/arrow.svg" alt="Arrow" />
               </button>
             </div>
           </div>
@@ -90,7 +97,7 @@ function Drawer({ onClose, onRemove, items = [], opened }) {
                 ? `Ваш заказ #${orderId} скоро будет передан курьерской доставке`
                 : 'Добавьте хотя бы одну пару кроссовок, чтобы сделать заказ.'
             }
-            image={isOrderComplete ? 'img/complete-order.jpg' : 'img/empty-cart.jpg'}
+            image={isOrderComplete ? 'images/complete-order.jpg' : 'images/empty-cart.jpg'}
           />
         )}
       </div>

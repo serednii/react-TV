@@ -1,0 +1,268 @@
+[
+  {
+    "id": "1",
+    "title": "65\" TCL 65C745 + 3 roky záruka po registraci",
+    "price": 4555,
+    "urlImage": "images/tv/1.webp",
+    "parentId": "sv787ccv9"
+  },
+  {
+    "id": "2",
+    "title": "85\" TCL 85C845 + 3 roky záruka po registraci",
+    "price": 199,
+    "urlImage": "images/tv/2.webp",
+    "parentId": "2yyysdkj"
+  },
+  {
+    "id": "3",
+    "title": "65\" Sony Bravia XR-65X90L",
+    "price": 39999,
+    "urlImage": "images/tv/3.webp",
+    "parentId": "nh73645"
+  },
+  {
+    "id": "4",
+    "parentId": "cvxcvsdfvdcv",
+    "title": "98\" TCL 98P743",
+    "urlImage": "images/tv/4.webp",
+    "price": 29999
+  },
+  {
+    "id": "5",
+    "title": "65\" Sony Bravia KD-65X85L",
+    "urlImage": "images/tv/5.webp",
+    "price": 74990,
+    "parentId": "rRZOAlXBmw"
+  },
+  {
+    "id": "6",
+    "title": "83\" Sony Bravia OLED XR-83A90J Televize SMART ",
+    "urlImage": "images/tv/6.webp",
+    "price": 107690,
+    "parentId": "zxcvzxcvzdcv"
+  },
+  {
+    "id": "7",
+    "title": "65\" Philips The One 65PUS8818 + Cashback na soundbar",
+    "urlImage": "images/tv/7.webp",
+    "price": 22340,
+    "parentId": "zdfzxcvsd"
+  },
+  {
+    "id": "8",
+    "title": "65\" Samsung QE65QN85C",
+    "urlImage": "images/tv/8.webp",
+    "price": 26990,
+    "parentId": "zxvzxcvc"
+  },
+  {
+    "id": "9",
+    "title": "85\" Samsung QE85QN900C + Cashback 25.000Kč",
+    "urlImage": "images/tv/9.webp",
+    "price": 159990,
+    "parentId": "sdvsdsdsdf"
+  },
+  {
+    "id": "10",
+    "title": "55\" LG OLED55C31",
+    "urlImage": "images/tv/10.webp",
+    "price": 29990,
+    "parentId": "zdfcvsefg4"
+  },
+  {
+    "id": "11",
+    "title": "55\" Samsung QE55Q60C + Xbox Game Pass ",
+    "urlImage": "images/tv/11.webp",
+    "price": 13990,
+    "parentId": "ZpAMxrHwXL"
+  },
+  {
+    "id": "12",
+    "title": "43\" Samsung UE43CU7172",
+    "urlImage": "images/tv/12.webp",
+    "price": 9980,
+    "parentId": "345645656d"
+  },
+  {
+    "id": "13",
+    "title": "65\" Samsung UE65CU7172",
+    "urlImage": "images/tv/13.webp",
+    "price": 12990,
+    "parentId": "sdfgsdfgs"
+  },
+  {
+    "id": "14",
+    "title": "50\" LG 50QNED813",
+    "urlImage": "images/tv/14.webp",
+    "price": 15534,
+    "parentId": "dfgsdfgsdf34"
+  },
+  {
+    "id": "15",
+    "title": "40\" UD 40F5210",
+    "urlImage": "images/tv/15.webp",
+    "price": 4587,
+    "parentId": "uusdflfd76"
+  },
+  {
+    "id": "16",
+    "title": "55\" LG 55UR80003",
+    "urlImage": "images/tv/16.webp",
+    "price": 9999,
+    "parentId": "vbfghdfgtg"
+  },
+  {
+    "id": "17",
+    "title": "65\" LG OLED65C31",
+    "urlImage": "images/tv/17.webp",
+    "price": 35990,
+    "parentId": "45646fvdc"
+  },
+  {
+    "id": "18",
+    "title": "75\" LG 75QNED913",
+    "urlImage": "images/tv/18.webp",
+    "price": 29980,
+    "parentId": "hhhyttdu"
+  },
+  {
+    "id": "19",
+    "title": "65\" Samsung QE65Q60C Xbox Game Pass ",
+    "urlImage": "images/tv/19.webp",
+    "price": 18990,
+    "parentId": "7YEl345354"
+  },
+  {
+    "id": "20",
+    "title": "77\" Samsung QE77S90C",
+    "urlImage": "images/tv/20.webp",
+    "price": 59990,
+    "parentId": "45645vfgdf"
+  },
+  {
+    "id": "21",
+    "title": "Мужские Кроссовки Nike Lebron XVIIItttt",
+    "price": 4555,
+    "urlImage": "images/sneakers/5.jpg",
+    "parentId": "97687sdf"
+  },
+  {
+    "id": "22",
+    "title": "Мужские Кроссовки Nike Blazer Suede",
+    "price": 50,
+    "urlImage": "images/sneakers/10.jpg",
+    "parentId": "ad6vLm3l4l"
+  },
+  {
+    "id": "23",
+    "title": "Кроссовки Puma X Aka Boku Future Rider",
+    "price": 8999,
+    "urlImage": "images/sneakers/1.jpg",
+    "parentId": "muYt2NUyvH"
+  },
+  {
+    "id": "24",
+    "parentId": "ZwZDdj80ZM",
+    "title": "Мужские Кроссовки Nike Blazer Mid",
+    "urlImage": "images/sneakers/3.jpg",
+    "price": 12947
+  },
+  {
+    "id": "25",
+    "title": "erfewrw",
+    "urlImage": "images/sneakers/5.jpg",
+    "price": 232,
+    "parentId": "cvdvdcxcv"
+  },
+  {
+    "id": "26",
+    "title": ";soieupowieupoi",
+    "urlImage": "images/sneakers/10.jpg",
+    "price": 546,
+    "parentId": "wpIfPGu7cV"
+  },
+  {
+    "id": "27",
+    "title": "ertwerw",
+    "urlImage": "images/sneakers/5.jpg",
+    "price": 4564,
+    "parentId": "NjMllwa6bK"
+  },
+  {
+    "id": "28",
+    "title": "oosdvfero",
+    "urlImage": "images/sneakers/7.jpg",
+    "price": 9980,
+    "parentId": "633IFYo4gy"
+  },
+  {
+    "id": "29",
+    "title": "oosdvfero",
+    "urlImage": "images/sneakers/7.jpg",
+    "price": 9980,
+    "parentId": "1DvAV2TEy0"
+  },
+  {
+    "id": "30",
+    "title": "oosdvfero",
+    "urlImage": "images/sneakers/7.jpg",
+    "price": 9980,
+    "parentId": "R7btq4NTlW"
+  },
+  {
+    "id": "31",
+    "title": "oosdvfero",
+    "urlImage": "images/sneakers/7.jpg",
+    "price": 9980,
+    "parentId": "jjfhsdofgf7"
+  },
+  {
+    "id": "32",
+    "title": "oosdvfero",
+    "urlImage": "images/sneakers/7.jpg",
+    "price": 9980,
+    "parentId": "QS9KPjCBTq"
+  },
+  {
+    "id": "33",
+    "title": "oosdvfero",
+    "urlImage": "images/sneakers/7.jpg",
+    "price": 9980,
+    "parentId": "wtwyn0hV3U"
+  },
+  {
+    "id": "34",
+    "title": "oosdvfero",
+    "urlImage": "images/sneakers/7.jpg",
+    "price": 9980,
+    "parentId": "opC9n77iT8"
+  },
+  {
+    "id": "35",
+    "title": "Мужские Кроссовки Nike Kyrie 5811",
+    "urlImage": "images/sneakers/8.jpg",
+    "price": 44587,
+    "parentId": "vw65qaBP5i"
+  },
+  {
+    "id": "36",
+    "title": "Мужские Кроссовки Nike Kyrie 54444",
+    "urlImage": "images/sneakers/2.jpg",
+    "price": 567,
+    "parentId": "o7YElPmuNy"
+  },
+  {
+    "id": "37",
+    "title": "Мужские Кроссовки Nike Lebron XVIII new",
+    "urlImage": "images/sneakers/6.jpg",
+    "price": 444,
+    "parentId": "i04SbZTiek"
+  },
+  {
+    "id": "38",
+    "title": "tyttyty",
+    "urlImage": "images/tv/2.webp",
+    "price": 454546,
+    "parentId": "5445efge"
+  }
+]

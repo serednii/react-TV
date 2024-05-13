@@ -1,0 +1,55 @@
+.orders,
+.card,
+.favorites {
+    position: relative;
+
+    .counter {
+        position: absolute;
+        left: 14px;
+        top: -15px;
+        border: 1px solid grey;
+        padding: 3px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        width: 20px;
+        height: 20px;
+    }
+}
+
+// .favorites {
+//     position: relative;
+
+//     .counter {
+//         position: absolute;
+//         left: 14px;
+//         top: -15px;
+//         border: 1px solid grey;
+//         padding: 3px;
+//         display: flex;
+//         justify-content: center;
+//         align-items: center;
+//         border-radius: 50%;
+//         width: 20px;
+//         height: 20px;
+//     }
+// }
+
+// .orders {
+//     position: relative;
+
+//     .counter {
+//         position: absolute;
+//         left: 14px;
+//         top: -15px;
+//         border: 1px solid grey;
+//         padding: 3px;
+//         display: flex;
+//         justify-content: center;
+//         align-items: center;
+//         border-radius: 50%;
+//         width: 20px;
+//         height: 20px;
+//     }
+// }
