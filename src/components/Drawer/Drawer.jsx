@@ -46,7 +46,7 @@ function Drawer({ orders, setOrders, onClose, onRemove, items = [], opened }) {
       <div className={styles.drawer}>
 
         <h2 className="d-flex justify-between mb-30">
-          Корзина <img onClick={onClose} className="cu-p" src="images/btn-remove.svg" alt="Close" />
+        Basket <img onClick={onClose} className="cu-p" src="images/btn-remove.svg" alt="Close" />
         </h2>
 
         {items.length > 0 ? (
@@ -74,28 +74,28 @@ function Drawer({ orders, setOrders, onClose, onRemove, items = [], opened }) {
             <div className="cartTotalBlock">
               <ul>
                 <li>
-                  <span>Итого:</span>
+                  <span>Total:</span>
                   <div></div>
-                  <b>{totalPrice} руб. </b>
+                  <b>{totalPrice} CZK. </b>
                 </li>
                 <li>
-                  <span>Налог 5%:</span>
+                  <span>Tax 5%:</span>
                   <div></div>
-                  <b>{(totalPrice / 100) * 5} руб. </b>
+                  <b>{(totalPrice / 100) * 5} CZK. </b>
                 </li>
               </ul>
               <button disabled={isLoading} onClick={onClickOrder} className="greenButton">
-                Оформить заказ <img src="images/arrow.svg" alt="Arrow" />
+              Checkout <img src="images/arrow.svg" alt="Arrow" />
               </button>
             </div>
           </div>
         ) : (
           <Info
-            title={isOrderComplete ? 'Заказ оформлен!' : 'Корзина пустая'}
+            title={isOrderComplete ? 'Order is processed!' : 'Cart is empty'}
             description={
               isOrderComplete
-                ? `Ваш заказ #${orderId} скоро будет передан курьерской доставке`
-                : 'Добавьте хотя бы одну пару кроссовок, чтобы сделать заказ.'
+                ? `Your order #${orderId} will be transferred to courier delivery soon`
+                : 'Add at least one pair of sneakers to complete your order.'
             }
             image={isOrderComplete ? 'images/complete-order.jpg' : 'images/empty-cart.jpg'}
           />

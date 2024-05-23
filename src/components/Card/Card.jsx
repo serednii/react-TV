@@ -30,7 +30,7 @@ function Card({
   };
 
   return (
-    <div className={styles.card} data-key={k} >
+    <div className={styles.card}  >
       {loading ? (
           <ContentLoader
           speed={2}
@@ -53,17 +53,17 @@ function Card({
             </div>
           )}
           {isOrders || <div className={styles.edit} onClick={() => setEditCart(obj)}>
-            <img src='images/edit.svg' />
+            <img src='images/edit.svg' alt="tv"/>
           </div>}
           {isOrders || <div className={styles.deleted} onClick={() => !isEditCart && setIsDeleted(obj)}>
-            <img src='images/delete.svg' />
+            <img src='images/delete.svg' alt="tv" />
           </div>}
           <img width="100%" height={135} src={urlImage} alt="Sneakers" />
           <h5>{title}</h5>
           <div className="d-flex justify-between align-center">
             <div className="d-flex flex-column">
-              <span>Цена:</span>
-              <b>{price} руб.</b>
+              <span>Cena:</span>
+              <b>{price} CZK.</b>
             </div>
             {onPlus && (
               <img

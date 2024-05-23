@@ -10,7 +10,6 @@ import Favorites from './pages/Favorites';
 import Orders from './pages/Orders';
 import Added from './components/Added/Added';
 import Edit from './components/Edit/Edit';
-import { makeId } from './hooks/makeId';
 export const baseUrl = 'https://635d74d2ea764497f0dd237e.mockapi.io/';
 
 
@@ -29,9 +28,7 @@ function App() {
   const [isAddedCart, setIsAddedCart] = React.useState(false);
 
   const [orders, setOrders] = React.useState([]);
-  const [textClearOrders, setTextClearOrders] = React.useState('');
-  const [textClearCart, setTextClearCart] = React.useState('');
-  const [textClearFavorites, setTextClearFavorites] = React.useState('');
+
 
   React.useEffect(() => {
     async function fetchData() {
@@ -45,10 +42,10 @@ function App() {
         ]);
 
         setIsLoading(false);
-        setCartItems(cartResponse.data);
-        setFavorites(favoritesResponse.data);
+        // setCartItems(cartResponse.data);
+        // setFavorites(favoritesResponse.data);
         setItems(itemsResponse.data);
-        setOrders(orders.data.reduce((prev, obj) => [...prev, ...obj.items], []));
+        // setOrders(orders.data.reduce((prev, obj) => [...prev, ...obj.items], []));
       } catch (error) {
         alert('Ошибка при запросе данных ;(');
         console.error(error);
@@ -58,31 +55,24 @@ function App() {
     fetchData();
   }, []);
 
-  // **********************************************************************************************
   const onDeleteToCart = async (id, resourse) => {
 
     if (resourse === "cart") setCartItems(prev => prev.filter((e, i) => id !== e.id));
     else if (resourse === "sneakers") setItems(prev => prev.filter((e, i) => id !== e.id));
     try {
-      const { data } = await axios.delete(`${baseUrl}${resourse}/${id}`);
+      await axios.delete(`${baseUrl}${resourse}/${id}`);
     } catch (error) {
       alert(`Ошибка при удалении ${resourse} на сервере`);
     }
 
   }
-  // **********************************************************************************************
 
-  // **********************************************************************************************
-  const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
-  // **********************************************************************************************
+  // const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
 
-  // ***************************************search*******************************************************
   const onChangeSearchInput = (e) => {
-    console.log("dfgdfgg")
     setSearchValue(e.target.value);
   }
-  // **********************************************************************************************
 
   const setIsAddedCartSave = async (obj) => {
     try {
@@ -94,7 +84,7 @@ function App() {
   }
 
   const setIsEditCartSave = async (obj) => {
-
+    console.log(obj)
     try {
       const { data } = await axios.put(`${baseUrl}sneakers/${obj.id}`, obj);
       setItems((prev) => {
@@ -109,7 +99,6 @@ function App() {
     }
 
   }
-
 
   const onAddToCart = async (obj) => {
     try {
@@ -154,63 +143,6 @@ function App() {
     }
   };
 
-
-  // **********************************************************************************************
-  const clearOrders = async () => {
-    try {
-      const { data } = await axios.get(`${baseUrl}orders`);
-      console.log(data.id);
-      for (let i = 0; i < data.length; i++) {
-        await axios.delete(`${baseUrl}orders/` + data[i].id);
-        setTextClearOrders(`Deleted obj  ${i + 1}`);
-        await delay(200);
-      }
-      setTextClearOrders('');
-
-    } catch (error) {
-      alert('Error deleted object in Orders')
-    }
-  };
-  // **********************************************************************************************
-
-  // **********************************************************************************************
-  const clearCart = async () => {
-    try {
-      const { data } = await axios.get(`${baseUrl}cart`);
-      console.log(data);
-      for (let i = 0; i < data.length; i++) {
-
-        await axios.delete(`${baseUrl}cart/` + data[i].id);
-        setTextClearCart(`Deleted obj  ${i + 1}`);
-        await delay(200);
-      }
-      setTextClearCart('');
-      setCartItems([]);
-    } catch (error) {
-      alert('Error deleted object in cart')
-    }
-  };
-  // **********************************************************************************************
-
-  // **********************************************************************************************
-  const clearFavorite = async () => {
-    try {
-      const { data } = await axios.get(`${baseUrl}favorites`);
-      console.log('data');
-      console.log(data);
-      for (let i = 0; i < data.length; i++) {
-        await axios.delete(`${baseUrl}favorites/` + data[i].id);
-        setTextClearFavorites(`Deleted obj  ${i + 1}`);
-        await delay(200);
-      }
-      setTextClearFavorites('');
-      setFavorites([]);
-    } catch (error) {
-      alert('Error deleted object in favorite')
-    }
-  };
-  // **********************************************************************************************
-
   const onRemoveItem = (id) => {
     try {
       axios.delete(`${baseUrl}cart/${id}`);
@@ -220,9 +152,6 @@ function App() {
       console.error(error);
     }
   };
-
-
-
 
   const isItemAdded = (parentId) => {
     return cartItems.some((obj) => obj.parentId === parentId);
@@ -304,8 +233,6 @@ function App() {
               items={items}
               cartItems={cartItems}
               searchValue={searchValue}
-              // setSearchValue={setSearchValue}
-              // onChangeSearchInput={onChangeSearchInput}
               onAddToFavorite={onAddToFavorite}
               onAddToCart={onAddToCart}
               isLoading={isLoading}

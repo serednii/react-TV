@@ -38,7 +38,7 @@ function Home({
          <TitleCards key="titleCards" />
         <div className={styles.cardsAdded} >
                 {<div className={styles.added} onClick={() => setIsAddedCart(true)} >
-                    <img src='images/added.svg' />
+                    <img src='images/added.svg' alt="icon"/>
                 </div>}
         </div>
       </div>

@@ -1,8 +1,6 @@
 import React from 'react';
-import axios from 'axios';
 
 import Card from '../components/Card/Card';
-import AppContext from '../context';
 function Orders({orders, setOrders}) {
 
   console.log(orders)
@@ -10,7 +8,7 @@ function Orders({orders, setOrders}) {
   return (
     <div className="content p-40">
       <div className="d-flex align-center justify-between mb-40">
-        <h1>Мои заказы</h1>
+        <h1>My orders</h1>
       </div>
 
       <div className="d-flex flex-wrap">
