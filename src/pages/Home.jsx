@@ -12,7 +12,7 @@ function Home({
   setIsAddedCart,
   isFavoriteAdded
 }) {
-  console.log('home')
+  console.log('render home')
   const renderItems = () => {
     const filteredItems = items.filter((item) =>
     item.title.toLowerCase().includes(searchValue.toLowerCase()),

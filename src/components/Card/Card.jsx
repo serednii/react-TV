@@ -18,6 +18,8 @@ function Card({
   k,
   isOrders=true
 }) {
+  console.log('render card')
+
   const { isItemAdded, isEditCart, setIsDeleted, setEditCart } = React.useContext(AppContext);
   const obj = { id, parentId, title, urlImage, price };
 

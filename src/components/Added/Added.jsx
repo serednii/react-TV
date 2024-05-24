@@ -6,7 +6,8 @@ function Added({
         setIsAddedCartSave,
         setIsAddedCart
 }) {
-
+  console.log('render added')
+  
     const [description, setDescription] = React.useState('');
     const [price, setPrice] = React.useState('');
     const [selectedFile, setSelectedFile] = React.useState(null);

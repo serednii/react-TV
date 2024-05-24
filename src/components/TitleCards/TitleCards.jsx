@@ -3,6 +3,8 @@ import styles from './titleCards.module.scss';
 import AppContext from '../../context';
 
 function TitleCards() {
+  console.log('render TitleCards')
+
     const { onChangeSearchInput, searchValue, setSearchValue } = React.useContext(AppContext);
 
     return (

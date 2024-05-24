@@ -9,6 +9,8 @@ import styles from './Drawer.module.scss';
 const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
 function Drawer({ orders, setOrders, onClose, onRemove, items = [], opened }) {
+  console.log('render drawer')
+  
   const { cartItems, setCartItems, totalPrice } = useCart();
   const [orderId, setOrderId] = React.useState(null);
   const [isOrderComplete, setIsOrderComplete] = React.useState(false);

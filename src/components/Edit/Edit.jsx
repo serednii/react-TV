@@ -6,6 +6,8 @@ function Edit({ obj,
     setIsEditCartSave,
     setEditCart
  }) {
+  console.log('render edit')
+
 
         const [description, setDescription] = React.useState(obj.title);
         const [price, setPrice] = React.useState(obj.price);

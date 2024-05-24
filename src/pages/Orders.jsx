@@ -2,6 +2,8 @@ import React from 'react';
 
 import Card from '../components/Card/Card';
 function Orders({orders, setOrders}) {
+  console.log('render order')
+
 
   console.log(orders)
 

@@ -6,6 +6,8 @@ import { useCart } from '../hooks/useCart';
 import './Header.scss';
 
 function Header({ onClickCart, favorites, orders }) {
+  console.log('render heder')
+
   const { cartItems, totalPrice } = useCart();
 
   return (

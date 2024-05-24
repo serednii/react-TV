@@ -93,6 +93,7 @@
 
     .blockPrice {
         font-size: 1rem;
+        margin-bottom: 15px;
 
         span {
             margin-right: 15px;
@@ -101,6 +102,10 @@
         input {
             line-height: 1rem;
             width: 50%;
+        }
+
+        b {
+            margin-right: 15px;
         }
 
     }

@@ -14,6 +14,7 @@ export const baseUrl = 'https://635d74d2ea764497f0dd237e.mockapi.io/';
 
 
 function App() {
+  console.log('render app')
   const [items, setItems] = React.useState([]);
   const [cartItems, setCartItems] = React.useState([]);
   const [favorites, setFavorites] = React.useState([]);
@@ -33,19 +34,19 @@ function App() {
   React.useEffect(() => {
     async function fetchData() {
       try {
+
         const [cartResponse, favoritesResponse, itemsResponse, orders] = await Promise.all([
           axios.get(`${baseUrl}cart`),
           axios.get(`${baseUrl}favorites`),
           axios.get(`${baseUrl}sneakers`),
           axios.get(`${baseUrl}orders`)
-
         ]);
 
-        setIsLoading(false);
-        // setCartItems(cartResponse.data);
-        // setFavorites(favoritesResponse.data);
-        setItems(itemsResponse.data);
-        // setOrders(orders.data.reduce((prev, obj) => [...prev, ...obj.items], []));
+        setIsLoading(false); //1разререндинг
+        setCartItems(cartResponse.data);//2разререндинг
+        setFavorites(favoritesResponse.data);//2разререндинг
+        setItems(itemsResponse.data);//2разререндинг
+        setOrders(orders.data.reduce((prev, obj) => [...prev, ...obj.items], []));//2разререндинг
       } catch (error) {
         alert('Ошибка при запросе данных ;(');
         console.error(error);

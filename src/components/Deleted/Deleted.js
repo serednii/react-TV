@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './Deleted.module.scss';
 function Deleted({ obj, onDeleteToCart, setIsDeleted }) {
+    console.log('render deleted')
 
     const handleDeletedCard = () => {
         onDeleteToCart(obj.id, 'sneakers');
