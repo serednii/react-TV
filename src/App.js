@@ -105,41 +105,46 @@ function App() {
     try {
       const findItem = cartItems.find((item) => item.parentId === obj.parentId);
       if (findItem) {
-        setCartItems((prev) => prev.filter((item) => item.parentId !== obj.parentId));
-        await axios.delete(`${baseUrl}cart/${findItem.id}`);
+        try {
+          await axios.delete(`${baseUrl}cart/${findItem.id}`);
+          setCartItems((prev) => prev.filter((item) => item.parentId !== obj.parentId));
+        } catch (error) {
+          throw new Error('Ошибка при удалении из корзини')
+        }
       } else {
-        setCartItems((prev) => [...prev, obj]);
-        const { data } = await axios.post(`${baseUrl}cart`, obj);
-        setCartItems((prev) =>
-          prev.map((item) => {
-            if (item.parentId === data.parentId) {
-              return {
-                ...item,
-                id: data.id,
-              };
-            }
-            return item;
-          }),
-        );
+        try {
+          const { data } = await axios.post(`${baseUrl}cart`, obj);
+          setCartItems((prev) => [...prev, data]);
+        } catch (error) {
+          throw Error('Ошибка при добавлении в корзину')
+        }
       }
     } catch (error) {
-      alert('Ошибка при добавлении в корзину');
+      alert(error);
       console.error(error);
     }
   };
 
   const onAddToFavorite = async (obj) => {
     try {
-      const findObject = favorites.find((favObj) => favObj.parentId === obj.parentId)
+      const findObject = favorites.find((favorite) => favorite.parentId === obj.parentId)
       if (findObject) {
-        axios.delete(`${baseUrl}favorites/${findObject.id}`);
-        setFavorites((prev) => prev.filter((item) => item.parentId !== obj.parentId));
+        try {
+          axios.delete(`${baseUrl}favorites/${findObject.id}`);
+          setFavorites((prev) => prev.filter((item) => item.parentId !== obj.parentId));
+        } catch (error) {
+          throw Error('Не удалось удалить товар добавленний в любимие')
+        }
       } else {
-        const { data } = await axios.post(`${baseUrl}favorites`, obj,);
-        setFavorites((prev) => [...prev, data]);
+        try {
+          const { data } = await axios.post(`${baseUrl}favorites`, obj,);
+          setFavorites((prev) => [...prev, data]);
+        } catch (error) {
+          throw Error('Не удалось добавить товар  в любимие')
+        }
       }
     } catch (error) {
-      alert('Не удалось добавить в фавориты');
+      alert(error);
       console.error(error);
     }
   };
