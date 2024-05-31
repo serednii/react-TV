@@ -3,8 +3,12 @@ import Card from '../components/Card/Card';
 
 function Favorites({
   favorites, 
-  onAddToFavorite
-  
+  onAddToFavorite,
+  isItemAdded, 
+  isEditCart, 
+  setIsDeleted, 
+  setEditCart,
+
 }) {
   console.log('render favorites')
 
@@ -15,7 +19,17 @@ function Favorites({
       </div>
       <div className="d-flex flex-wrap">
         {favorites.map((item, index) => (
-          <Card key={index} isOrders={false}  isFavorite={true} onFavorite={onAddToFavorite} {...item} />
+          <Card 
+          key={index} 
+          isOrders={false}  
+          isFavorite={true} 
+          onFavorite={onAddToFavorite} 
+          {...item} 
+          isItemAdded={isItemAdded}
+          isEditCart={isEditCart}
+          setIsDeleted={setIsDeleted}
+          setEditCart={setEditCart}
+           />
         ))}
       </div>
     </div>

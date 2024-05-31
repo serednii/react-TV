@@ -10,7 +10,13 @@ function Home({
   onAddToCart,
   isLoading,
   setIsAddedCart,
-  isFavoriteAdded
+  isFavoriteAdded,
+  isItemAdded, 
+  isEditCart, 
+  setIsDeleted, 
+  setEditCart,
+  onChangeSearchInput, 
+  setSearchValue,
 }) {
   console.log('render home')
   const renderItems = () => {
@@ -28,6 +34,10 @@ function Home({
         {...item}
         isOrders={false}
         isFavorite={isFavoriteAdded(!isLoading && item.parentId)}
+        isItemAdded={isItemAdded}
+         isEditCart={isEditCart}
+          setIsDeleted={setIsDeleted}
+          setEditCart={setEditCart}
       />
     ));
   };
@@ -35,7 +45,12 @@ function Home({
   return (
     <div className="content p-40">
       <div className="d-flex align-center justify-between mb-40">
-         <TitleCards key="titleCards" />
+         <TitleCards 
+         key="titleCards" 
+         onChangeSearchInput={onChangeSearchInput} 
+         searchValue={searchValue} 
+         setSearchValue={setSearchValue}
+         />
         <div className={styles.cardsAdded} >
                 {<div className={styles.added} onClick={() => setIsAddedCart(true)} >
                     <img src='images/added.svg' alt="icon"/>

@@ -13,29 +13,33 @@ function Added({
     const [selectedFile, setSelectedFile] = React.useState(null);
     selectedFile && console.log(selectedFile)
 
-    const handleEditCartSave = () => {
-        if (!description  || !price) {
-            alert("Заповніть всі поля");
-          } else {
+    const handleEditCartSave = (e) => {
+        e.preventdefault()
+        if (!description  || !price || !selectedFile) {
+            alert("Update all fields");
+            return
+          }
+          
+          
             setIsAddedCartSave({
               title:description,
               urlImage: "images/tv/" +  selectedFile.name,
               price: Number(price),
               parentId: makeId(8),
             })
-        }
+        
     }
 
     return (
         <div className={styles.parent}>
-            <h2 className={styles.title}>Here you can change information about the product</h2>
+            <h2 className={styles.title}>Here you can add a new product</h2>
             <form className={styles.parentCart}>
 
                 <div className={styles.blockImages}>
                     <img className={styles.images} width={133} height={112} src={selectedFile && "images/tv/" +  selectedFile.name} alt="tv" />
                     <input
                     type="file" 
-                    accept="images/*"
+                    accept="/images/*"
                     onChange={(e) => setSelectedFile(e.target.files[0])}
                     />
                 </div>
@@ -53,7 +57,7 @@ function Added({
 
             <div className={styles.blockButton} >
                 <button onClick={() => setIsAddedCart(false)} >Close</button>
-                <button onClick={handleEditCartSave} >Save</button>
+                <button onClick={(e)=>handleEditCartSave(e)} >Save</button>
             </div>
             </form>
         </div>

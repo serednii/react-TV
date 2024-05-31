@@ -5,10 +5,10 @@ import { useCart } from '../hooks/useCart';
 
 import './Header.scss';
 
-function Header({ onClickCart, favorites, orders }) {
+function Header({ onClickCart, favorites, orders, cartItems }) {
   console.log('render heder')
 
-  const { cartItems, totalPrice } = useCart();
+  const { totalPrice } = useCart(cartItems);
 
   return (
     <header className="d-flex justify-between align-center p-40">

@@ -8,10 +8,10 @@ import styles from './Drawer.module.scss';
 
 const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
-function Drawer({ orders, setOrders, onClose, onRemove, items = [], opened }) {
+function Drawer({ setOrders, onClose, onRemove, setCartOpened, setCartItems, cartItems = [], opened }) {
   console.log('render drawer')
   
-  const { cartItems, setCartItems, totalPrice } = useCart();
+  const { totalPrice } = useCart(cartItems );
   const [orderId, setOrderId] = React.useState(null);
   const [isOrderComplete, setIsOrderComplete] = React.useState(false);
   const [isLoading, setIsLoading] = React.useState(false);
@@ -51,10 +51,10 @@ function Drawer({ orders, setOrders, onClose, onRemove, items = [], opened }) {
         Basket <img onClick={onClose} className="cu-p" src="images/btn-remove.svg" alt="Close" />
         </h2>
 
-        {items.length > 0 ? (
+        {cartItems.length > 0 ? (
           <div className="d-flex flex-column flex">
             <div className="items flex">
-              {items.map((obj) => (
+              {cartItems.map((obj) => (
                 <div key={obj.id} className="cartItem d-flex align-center mb-20">
                   <div
                     style={{ backgroundImage: `url(${obj.urlImage})` }}
@@ -93,6 +93,7 @@ function Drawer({ orders, setOrders, onClose, onRemove, items = [], opened }) {
           </div>
         ) : (
           <Info
+          setCartOpened={setCartOpened}
             title={isOrderComplete ? 'Order is processed!' : 'Cart is empty'}
             description={
               isOrderComplete

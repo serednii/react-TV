@@ -1,11 +1,15 @@
 import React from 'react';
 import styles from './titleCards.module.scss';
-import AppContext from '../../context';
+// import AppContext from '../../context';
 
-function TitleCards() {
+function TitleCards({
+    onChangeSearchInput, 
+    searchValue, 
+    setSearchValue,
+}) {
   console.log('render TitleCards')
 
-    const { onChangeSearchInput, searchValue, setSearchValue } = React.useContext(AppContext);
+    // const { onChangeSearchInput, searchValue, setSearchValue } = React.useContext(AppContext);
 
     return (
         <div className={styles.titleCards}>

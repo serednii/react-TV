@@ -1,7 +1,13 @@
 import React from 'react';
 
 import Card from '../components/Card/Card';
-function Orders({orders, setOrders}) {
+function Orders({
+  orders, 
+  isItemAdded, 
+  isEditCart, 
+  setIsDeleted, 
+  setEditCart
+}) {
   console.log('render order')
 
 
@@ -15,7 +21,15 @@ function Orders({orders, setOrders}) {
 
       <div className="d-flex flex-wrap">
         {orders.map((item, index) => (
-          <Card key={index} loading={false} {...item} />
+          <Card 
+          key={index} 
+          loading={false} 
+          {...item} 
+          isItemAdded={isItemAdded}
+          isEditCart={isEditCart}
+           setIsDeleted={setIsDeleted}
+           setEditCart={setEditCart}
+          />
         ))}
       </div>
     </div>

@@ -1,7 +1,7 @@
 import React from 'react';
 import ContentLoader from 'react-content-loader';
 
-import AppContext from '../../context';
+// import AppContext from '../../context';
 
 import styles from './Card.module.scss';
 
@@ -16,11 +16,15 @@ function Card({
   isFavorite = false,
   loading = false,
   k,
-  isOrders=true
+  isOrders=true,
+  isItemAdded, 
+  isEditCart, 
+  setIsDeleted, 
+  setEditCart,
 }) {
   console.log('render card')
 
-  const { isItemAdded, isEditCart, setIsDeleted, setEditCart } = React.useContext(AppContext);
+  // const { isItemAdded, isEditCart, setIsDeleted, setEditCart } = React.useContext(AppContext);
   const obj = { id, parentId, title, urlImage, price };
 
   const onClickPlus = () => {

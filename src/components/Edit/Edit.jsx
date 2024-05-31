@@ -7,14 +7,13 @@ function Edit({ obj,
     setEditCart
  }) {
   console.log('render edit')
-
-
         const [description, setDescription] = React.useState(obj.title);
         const [price, setPrice] = React.useState(obj.price);
         const [selectedFile, setSelectedFile] = React.useState(null);
         selectedFile && console.log(selectedFile)
 
-const handleEditCartSave = () => {
+const handleEditCartSave = (e) => {
+    e.preventDefault();
     setIsEditCartSave({
         title:description,
         urlImage: "images/tv/" +  selectedFile.name,
@@ -51,7 +50,7 @@ const handleEditCartSave = () => {
 
                 <div className={styles.blockButton} >
                     <button onClick={() => setEditCart(false)} >Close</button>
-                    <button onClick={handleEditCartSave} >Save</button>
+                    <button onClick={(e)=>handleEditCartSave(e)} >Save</button>
                 </div>
             </form>
         </div>
