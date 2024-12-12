@@ -19,8 +19,6 @@ function Added({
             alert("Update all fields");
             return
           }
-          
-          
             setIsAddedCartSave({
               title:description,
               urlImage: "images/tv/" +  selectedFile.name,

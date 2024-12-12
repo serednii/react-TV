@@ -1,10 +1,7 @@
-import React from 'react';
-// import AppContext from '../context';
+import React from "react";
 
 const Info = ({ title, image, description, setCartOpened }) => {
-  console.log('render info')
-
-  // const { setCartOpened } = React.useContext(AppContext);
+  console.log("render info");
 
   return (
     <div className="cartEmpty d-flex align-center justify-center flex-column flex">

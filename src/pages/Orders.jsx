@@ -18,7 +18,6 @@ function Orders({
       <div className="d-flex align-center justify-between mb-40">
         <h1>My orders</h1>
       </div>
-
       <div className="d-flex flex-wrap">
         {orders.map((item, index) => (
           <Card 
